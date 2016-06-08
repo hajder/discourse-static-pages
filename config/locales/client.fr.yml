@@ -1,0 +1,18 @@
+fr:
+  js:
+    static_pages:
+      pages: 'Pages'
+      refresh: 'Rafraîchir'
+      new: 'Ajouter'
+      view: 'Voir'
+      edit: 'Éditer'
+      create: 'Créer'
+      update: 'Mettre à jour'
+      delete: 'Supprimer'
+      cancel: 'Annuler'
+      page: 'Page'
+      created: 'Créée'
+      updated: 'Mise à jour'
+      actions: 'Actions'
+      title: 'Titre'
+      body: 'Corps'
