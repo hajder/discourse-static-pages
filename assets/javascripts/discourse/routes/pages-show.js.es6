@@ -1,4 +1,5 @@
 import Page from '../models/page';
+import { cook } from 'discourse/lib/text';
 
 export default Discourse.Route.extend({
   model(params) {
@@ -8,7 +9,7 @@ export default Discourse.Route.extend({
   },
 
   setupController(controller, model) {
-    model.body = new Handlebars.SafeString(Discourse.Markdown.cook(model.body));
+    model.body = cook(model.body);
     controller.setProperties({ model });
   }
 });

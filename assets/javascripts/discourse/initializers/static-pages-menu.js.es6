@@ -1,19 +1,19 @@
-import HamburgerMenuComponent from 'discourse/components/hamburger-menu';
+import { withPluginApi } from 'discourse/lib/plugin-api';
 import Page from '../../discourse/models/page';
 
 export default {
   name: 'static-pages-menu',
 
   initialize: function() {
-    HamburgerMenuComponent.reopen({
-      didInsertElement() {
-        Page.findAll()
-          .then((result) => {
-            this.set('staticPages', result.pages);
-          });
 
-        this.set('staticPages', [{ title: 'Testing', id: 123 }]);
-      }
-    });
+    withPluginApi('0.1', api => {
+      Page.findAll().then(result => {
+          result.pages.forEach(page => {
+            api.decorateWidget('hamburger-menu:generalLinks', () => (
+              { href: '/pages/'+page.id, rawLabel: page.title }
+            ))
+          })
+        })
+    })
   }
 };
