@@ -1,5 +1,6 @@
 import Page from '../models/page';
 import { cook } from 'discourse/lib/text';
+import { ajax } from 'discourse/lib/ajax';
 
 export default Discourse.Route.extend({
   model(params) {

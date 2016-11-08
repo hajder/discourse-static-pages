@@ -1,14 +1,14 @@
 export default {
   findAll() {
-    return Discourse.ajax('/pages/admin/pages');
+    return ajax('/pages/admin/pages');
   },
 
   findById(id) {
-    return Discourse.ajax(`/pages/admin/pages/${id}`);
+    return ajax(`/pages/admin/pages/${id}`);
   },
 
   create(model) {
-    return Discourse.ajax('/pages/admin/pages', {
+    return ajax('/pages/admin/pages', {
       method: 'POST',
       contentType: 'application/json',
       data: JSON.stringify({ page: model })
@@ -16,7 +16,7 @@ export default {
   },
 
   update(model) {
-    return Discourse.ajax(`/pages/admin/pages/${model.id}`, {
+    return ajax(`/pages/admin/pages/${model.id}`, {
       method: 'PATCH',
       contentType: 'application/json',
       data: JSON.stringify({ page: model })
@@ -24,7 +24,7 @@ export default {
   },
 
   delete(model) {
-    return Discourse.ajax(`/pages/admin/pages/${model.id}`, {
+    return ajax(`/pages/admin/pages/${model.id}`, {
       method: 'DELETE'
     });
   }

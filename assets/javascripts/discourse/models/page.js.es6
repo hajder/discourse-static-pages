@@ -1,9 +1,9 @@
 export default {
   findAll() {
-    return Discourse.ajax('/pages');
+    return ajax('/pages');
   },
 
   findById(id) {
-    return Discourse.ajax(`/pages/${id}`);
+    return ajax(`/pages/${id}`);
   }
 };
