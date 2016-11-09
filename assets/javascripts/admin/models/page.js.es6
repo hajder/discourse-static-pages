@@ -1,3 +1,5 @@
+import { ajax } from 'discourse/lib/ajax';
+
 export default {
   findAll() {
     return ajax('/pages/admin/pages');
