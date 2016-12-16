@@ -1,6 +1,6 @@
 # name: static-pages
 # about: Static pages plugin for Discourse
-# version: 0.0.1
+# version: 0.0.2
 # authors: Nukomeet
 
 enabled_site_setting :static_pages_enabled

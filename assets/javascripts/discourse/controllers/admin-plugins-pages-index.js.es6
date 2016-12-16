@@ -1,6 +1,6 @@
 import Page from '../../admin/models/page';
 
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend({
   sortProperties: ['updated_at'],
   sortAscending: false,
 

@@ -1,7 +1,5 @@
-export default {
-  resource: 'pages',
-  path: '/pages',
-  map() {
-    this.route('show', { path: ':id' });
-  }
-};
+export default function () {
+  this.route('pages', function () {
+    this.route('show', { path: '/:id' });
+  })
+}

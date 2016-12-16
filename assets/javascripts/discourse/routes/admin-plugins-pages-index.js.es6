@@ -5,9 +5,5 @@ export default Discourse.Route.extend({
     return Page.findAll().then((result) => {
       return result.pages;
     });
-  },
-
-  setupController(controller, model) {
-    controller.setProperties({ model });
   }
 });
