@@ -14,4 +14,12 @@
     {{d-editor name="body" value=model.body required="true"}}
   </div>
 </div>
+<div class="form-group">
+  <label class="control-label col-lg-2" for="stylesheet">
+    {{i18n 'static_pages.stylesheet'}}
+  </label>
+  <div class="col-lg-10">
+    {{ace-editor content=model.stylesheet mode="scss" name="stylesheet" required="true"}}
+  </div>
+</div>
 <input type="hidden" name="id" value={{model.id}} id="id" />

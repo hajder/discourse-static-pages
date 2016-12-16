@@ -10,3 +10,21 @@ body .wmd-input {
     margin-bottom: 0.5em;
   }
 }
+
+.admin-static-pages {
+  .d-editor {
+    margin-bottom: 9px;
+  }
+  .ace-wrapper {
+    position: relative;
+    height: 400px;
+    width: 100%;
+  }
+  .ace_editor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}

@@ -1,6 +1,6 @@
 import Page from '../models/page';
-import { cook } from 'discourse/lib/text';
-import { ajax } from 'discourse/lib/ajax';
+import { default as PrettyText } from 'pretty-text/pretty-text';
+import { emojiUnescape } from 'discourse/lib/text';
 
 export default Discourse.Route.extend({
   model(params) {
@@ -10,7 +10,20 @@ export default Discourse.Route.extend({
   },
 
   setupController(controller, model) {
-    model.body = cook(model.body);
+    model.body = new Handlebars.SafeString(
+      emojiUnescape(
+        new PrettyText(
+          {
+            sanitize: false,
+            features: {
+              'bold-italics': true,
+              'auto-link': true,
+              'newline': true
+            }
+          }
+        ).cook(model.body)
+      )
+    );
     controller.setProperties({ model });
   }
 });

@@ -32,7 +32,7 @@ module StaticPages
     private
 
     def page_params
-      params.require(:page).permit(:title, :body)
+      params.require(:page).permit(:title, :body, :stylesheet)
     end
   end
 end

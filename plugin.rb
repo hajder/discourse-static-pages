@@ -1,7 +1,7 @@
 # name: static-pages
 # about: Static pages plugin for Discourse
-# version: 0.0.2
-# authors: Nukomeet
+# version: 0.0.3
+# authors: Nukomeet, Leo McArdle
 
 enabled_site_setting :static_pages_enabled
 add_admin_route 'static_pages.pages', 'pages'
