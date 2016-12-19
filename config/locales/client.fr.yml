@@ -17,3 +17,4 @@ fr:
       title: 'Titre'
       body: 'Corps'
       stylesheet: 'CSS'
+      path: 'Chemin'
