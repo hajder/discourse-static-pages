@@ -8,6 +8,7 @@ StaticPages::Engine.routes.draw do
     collection do
       get '' => 'admin_pages#index'
       post '' => 'admin_pages#create'
+      get 'greatestId' => 'admin_pages#greatest_id'
     end
 
     member do

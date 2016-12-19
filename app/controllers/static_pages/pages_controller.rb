@@ -8,5 +8,11 @@ module StaticPages
       page = Page.find(params[:id])
       render_json_dump(page: page)
     end
+
+    def route
+      normalized_path = params[:path].sub(/^\//, '').sub(/\/$/, '')
+      page = Page.where(path: normalized_path).first
+      render_json_dump(page: page)
+    end
   end
 end

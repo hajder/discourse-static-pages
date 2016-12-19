@@ -10,6 +10,7 @@ module StaticPages
 
     before_save do
       self.stylesheet_baked = compile_stylesheet(self.stylesheet) if self.stylesheet
+      self.path = path.sub(/^\//, '').sub(/\/$/, '') if self.path
     end
 
   end

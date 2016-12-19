@@ -9,6 +9,10 @@ export default {
     return ajax(`/pages/admin/pages/${id}`);
   },
 
+  findGreatestId() {
+    return ajax('/pages/admin/pages/greatestId')
+  },
+
   create(model) {
     return ajax('/pages/admin/pages', {
       method: 'POST',

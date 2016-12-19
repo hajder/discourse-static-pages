@@ -6,6 +6,10 @@ module StaticPages
       render_json_dump(pages: Page.all)
     end
 
+    def greatest_id
+      render_json_dump(id: Page.maximum(:id))
+    end
+
     def create
       page = Page.new(page_params)
       page.save!
@@ -32,7 +36,7 @@ module StaticPages
     private
 
     def page_params
-      params.require(:page).permit(:title, :body, :stylesheet)
+      params.require(:page).permit(:title, :body, :stylesheet, :path)
     end
   end
 end

@@ -3,9 +3,9 @@ import Page from '../../admin/models/page';
 export default Discourse.Route.extend({
   actions: {
     create() {
-      const { title, body, stylesheet } = this.controller.model;
+      const { title, body, stylesheet, path } = this.controller.model;
 
-      Page.create({ title, body, stylesheet })
+      Page.create({ title, body, stylesheet, path })
         .then(() => {
           this.transitionTo('adminPlugins.pages.index');
         })
@@ -21,5 +21,12 @@ export default Discourse.Route.extend({
 
   model() {
     return {};
+  },
+
+  setupController: function(controller, model) {
+    controller.set('model', model);
+    Page.findGreatestId().then(result => {
+      controller.set('pathPlaceholder', `/pages/${result.id + 1}`)
+    })
   }
 });
